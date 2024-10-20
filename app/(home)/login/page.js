@@ -1,11 +1,11 @@
 "use client"; // Make sure this is present
 
-import SignupForm from "@/app/components/signupForm";
+import LoginForm from "@/app/components/loginForm";
 
 export default function SignUp() {
   return (
     <div>
-      <SignupForm />
+      <LoginForm />
     </div>
   );
 }
