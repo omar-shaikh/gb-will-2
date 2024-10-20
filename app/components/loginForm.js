@@ -65,7 +65,7 @@ const LoginForm = () => {
                         Login
                     </h1>
                     <p className="text-sm font-light text-gray-500 dark:text-gray-300">
-                        Don't have an account? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>.
+                        Don&apos;t have an account? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>.
                     </p>
                     <form className="mt-4 space-y-6 sm:mt-6" onSubmit={onSubmit}>
                         <div>
