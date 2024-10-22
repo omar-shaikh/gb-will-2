@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { UserPool } from '../../UserPool';
+import UserPool from '../../UserPool'; // Change import to default import
 import GreenLogo from '../../assets/GreenLogo.png';
 import PurpleLogo from '../../assets/PurpleLogo.png'; // Import your PurpleLogo
 import Image from "next/image";
