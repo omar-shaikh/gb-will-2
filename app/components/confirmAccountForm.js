@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from 'next/navigation'; // Import useRouter
-import UserPool from "@/UserPool"; // Make sure to import your UserPool configuration
+import { UserPool } from '../../UserPool';
 import { CognitoUser } from "amazon-cognito-identity-js"; // Import CognitoUser
 import GreenLogo from '../../assets/GreenLogo.png';
 import PurpleLogo from '../../assets/PurpleLogo.png'; // Import your PurpleLogo

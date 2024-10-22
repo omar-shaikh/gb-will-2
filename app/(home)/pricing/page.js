@@ -1,4 +1,4 @@
-import PricingCards from "@/app/components/pricingCards";
+import PricingCards from '../../components/pricingCards';
 
 export default function Pricing() {
   return (

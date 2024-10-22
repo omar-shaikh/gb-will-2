@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import UserPool from "@/UserPool";
+import { UserPool } from '../../UserPool';
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 import GreenLogo from '../../assets/GreenLogo.png';
 import PurpleLogo from '../../assets/PurpleLogo.png';

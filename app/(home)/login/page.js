@@ -1,8 +1,8 @@
 "use client"; // Make sure this is present
 
-import LoginForm from "@/app/components/loginForm";
+import LoginForm from '../../components/loginForm';
 
-export default function SignUp() {
+export default function LogIn() {
   return (
     <div>
       <LoginForm />
