@@ -50,14 +50,14 @@ const LoginForm = () => {
                             src={PurpleLogo} 
                             width={140}
                             height={32}
-                            alt="Logo"
+                            alt="Purple Logo"
                             className="dark:hidden"
                         />
                         <Image 
                             src={GreenLogo} 
                             width={140}
                             height={32}
-                            alt="Logo"
+                            alt="Green Logo"
                             className="hidden dark:block"
                         />
                     </a>
@@ -101,7 +101,13 @@ const LoginForm = () => {
                     </form>
                 </div>
                 <div className="mr-auto place-self-center lg:col-span-6">
-                    <img className="hidden mx-auto lg:flex" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg" alt="illustration" />
+                    <Image
+                        className="hidden mx-auto lg:flex"
+                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg"
+                        alt="Illustration"
+                        width={500} // Adjust this width as necessary
+                        height={300} // Adjust this height as necessary
+                    />
                 </div>
             </div>
         </section>

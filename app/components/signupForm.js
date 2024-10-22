@@ -1,37 +1,40 @@
-"use client";
 import React, { useState } from "react";
-import UserPool from '../../UserPool'; // Change import to default import
+import UserPool from '../../UserPool';
 import GreenLogo from '../../assets/GreenLogo.png';
-import PurpleLogo from '../../assets/PurpleLogo.png'; // Import your PurpleLogo
+import PurpleLogo from '../../assets/PurpleLogo.png';
 import Image from "next/image";
-import { useRouter } from 'next/navigation'; // Import useRouter
+import { useRouter } from 'next/navigation';
 
 const SignupForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [firstName, setFirstName] = useState(""); // New state for first name
-    const [lastName, setLastName] = useState(""); // New state for last name
-    const router = useRouter(); // Initialize useRouter
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [error, setError] = useState(null); // New state for error messages
+    const [loading, setLoading] = useState(false); // New state for loading
+    const router = useRouter();
 
     const onSubmit = (event) => {
         event.preventDefault();
+        setLoading(true); // Set loading to true when form is submitted
 
-        // Include first name and last name in the sign-up call
         UserPool.signUp(email, password, [
             {
-                Name: "given_name", // Attribute for first name
+                Name: "given_name",
                 Value: firstName,
             },
             {
-                Name: "family_name", // Attribute for last name
+                Name: "family_name",
                 Value: lastName,
             }
         ], null, (err, data) => {
+            setLoading(false); // Reset loading state
+
             if (err) {
                 console.error(err);
+                setError(err.message); // Update error state
             } else {
                 console.log("onSuccess: ", data);
-                // Navigate to the confirmAccount page upon success
                 router.push("/confirmAccount");
             }
         });
@@ -44,17 +47,17 @@ const SignupForm = () => {
                     <a href="#" className="inline-flex items-center mb-4 text-xl font-semibold text-gray-900 dark:text-white">
                         <Image 
                             src={PurpleLogo} 
-                            width={140}   // Replace with the actual width in pixels
-                            height={32}  // Replace with the actual height in pixels
+                            width={140}
+                            height={32}
                             alt="Logo"
-                            className="dark:hidden"  // Hide this in dark mode
+                            className="dark:hidden"
                         />
                         <Image 
                             src={GreenLogo} 
-                            width={140}   // Replace with the actual width in pixels
-                            height={32}  // Replace with the actual height in pixels
+                            width={140}
+                            height={32}
                             alt="Logo"
-                            className="hidden dark:block"  // Show this only in dark mode
+                            className="hidden dark:block"
                         />
                     </a>
                     <h1 className="mb-2 text-2xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
@@ -63,6 +66,7 @@ const SignupForm = () => {
                     <p className="text-sm font-light text-gray-500 dark:text-gray-300">
                         Start your website in seconds. Already have an account? <a href="login" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>.
                     </p>
+                    {error && <p className="text-red-500">{error}</p>} {/* Display error message */}
                     <form className="mt-4 space-y-6 sm:mt-6" onSubmit={onSubmit}>
                         <div className="grid gap-6 sm:grid-cols-2">
                             <div>
@@ -124,9 +128,7 @@ const SignupForm = () => {
                                 <svg className="w-5 h-5 mr-2" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_13183_10121)">
                                         <path d="M20.3081 10.2303C20.3081 9.55056 20.253 8.86711 20.1354 8.19836H10.7031V12.0492H16.1046C15.8804 13.2911 15.1602 14.3898 14.1057 15.0879V17.5866H17.3282C19.2205 15.8449 20.3081 13.2728 20.3081 10.2303Z" fill="#3F83F8"/>
-                                        <path d="M10.7019 20.0006C13.3989 20.0006 15.6734 19.1151 17.3306 17.5865L14.1081 15.0879C13.2115 15.6979 12.0541 16.0433 10.7056 16.0433C8.09669 16.0433 5.88468 14.2832 5.091 11.9169H1.76562V14.4927C3.46322 17.8695 6.92087 20.0006 10.7019 20.0006V20.0006Z" fill="#34A853"/>
-                                        <path d="M5.08857 11.9169C4.66969 10.6749 4.66969 9.33008 5.08857 8.08811V5.51233H1.76688C0.348541 8.33798 0.348541 11.667 1.76688 14.4927L5.08857 11.9169V11.9169Z" fill="#FBBC05"/>
-                                        <path d="M10.7019 3.95551C12.6597 3.95551 14.4372 4.84896 15.7111 6.22242L18.0781 3.61354C15.6734 1.13653 12.3989 0 10.7019 0C6.92087 0 3.46322 2.13007 1.76562 5.51233H5.08857C5.88266 3.57784 7.76762 1.95551 10.7019 1.95551V3.95551Z" fill="#EA4335"/>
+                                        <path d="M10.7019 20.0006C13.3989 20.0006 15.6734 19.1151 17.3306 17.5865L14.1081 15.0879C13.2115 15.6979 12.0541 16.0433 10.7056 16.0433C8.09669 16.0433 5.96978 14.0915 5.96978 10.2304C5.96978 9.12675 6.30522 8.07353 6.93134 7.28982C4.84632 7.94969 3.20976 9.65212 2.61268 11.7053C1.81857 14.0225 2.61353 16.6364 5.21432 17.5832C5.68263 18.0406 6.25387 18.4673 6.87339 18.7646C7.4939 19.0608 8.13694 19.2368 8.78794 19.2368C6.96309 19.8599 5.02793 20.0006 3.40779 20.0006C3.35693 20.0006 3.30751 20.0006 3.25689 20.0006H1.81671C1.22519 20.0006 0.860352 19.5866 0.860352 19.0287C0.860352 18.5492 1.25711 18.1348 1.81249 18.1348H3.25689C3.30751 18.1348 3.35693 18.1348 3.40779 18.1348C5.02077 18.1348 6.52952 17.5832 7.5956 16.7036C8.32414 15.9486 8.89248 15.0718 9.25782 14.1092C9.64723 15.9324 11.4735 16.6362 12.6784 16.6362C13.7823 16.6362 14.4699 16.0637 14.7466 15.7324H14.8503V19.0279C14.8503 19.5867 14.4854 20.0007 13.8939 20.0007C10.5879 20.0007 10.7019 20.0006 10.7019 20.0006Z" fill="white"/>
                                     </g>
                                     <defs>
                                         <clipPath id="clip0_13183_10121">
@@ -136,9 +138,20 @@ const SignupForm = () => {
                                 </svg>
                                 Sign up with Google
                             </a>
-                            <button type="submit" className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-primary-800">Sign up</button>
+                            <button type="submit" className={`w-full inline-flex items-center justify-center py-2.5 px-5 mb-2 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 dark:bg-primary-500 dark:hover:bg-primary-600 dark:focus:ring-primary-800 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={loading}>
+                                {loading ? 'Creating Account...' : 'Create an account'}
+                            </button>
                         </div>
                     </form>
+                </div>
+                <div className="mr-auto place-self-center lg:col-span-6">
+                    <Image
+                        className="hidden mx-auto lg:flex"
+                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg"
+                        alt="Illustration"
+                        width={500} // Adjust this width as necessary
+                        height={300} // Adjust this height as necessary
+                    />
                 </div>
             </div>
         </section>
