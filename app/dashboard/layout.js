@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }) {
   return (
     <html lang="en">
       <body>
-      <DashboardNav />
+          <DashboardNav />
         {children}
       </body>
     </html>

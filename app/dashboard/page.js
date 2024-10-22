@@ -1,9 +1,12 @@
-import Image from "next/image";
+// app/dashboard/page.js
+import WelcomeMessage from "../components/WelcomeMessage";
 
-export default function Home() {
+const Dashboard = () => {
   return (
-    <div>
-      <h1> Dashboard page</h1>
+    <div className="flex justify-center min-h-screen p-6 mt-10">
+      <WelcomeMessage />
     </div>
   );
-}
+};
+
+export default Dashboard;

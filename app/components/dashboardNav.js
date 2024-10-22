@@ -1,17 +1,31 @@
 import React from 'react';
-import UserIcon from '../../assets/UserIcon.png';
-
+import Image from 'next/image';
+import GreenLogo from '../../assets/GreenLogo.png'; // Import your GreenLogo
+import PurpleLogo from '../../assets/PurpleLogo.png'; // Import your PurpleLogo
+import Link from 'next/link';
 const DashboardNav = () => {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-        </a>
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-8">
+      <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Image 
+            src={PurpleLogo} 
+            width={170}   
+            height={32}  
+            alt="Logo"
+            className="dark:hidden"  
+          />
+          <Image 
+            src={GreenLogo} 
+            width={170}   
+            height={32}  
+            alt="Logo"
+            className="hidden dark:block"  
+          />
+        </Link>
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <span className="text-white dark:text-white mr-5">Omar Shaikh</span>
-          <button type="button" className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+          <span className="text-black dark:text-white mr-5">Omar Shaikh</span>
+          <button type="button" className="flex text-sm bg-gray-150 dark:bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
             <span className="sr-only">Open user menu</span>
             {/* Replace img with UserIcon */}
             <svg className="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -24,20 +38,7 @@ const DashboardNav = () => {
               <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
               <span className="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
             </div>
-            <ul className="py-2" aria-labelledby="user-menu-button">
-              <li>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-              </li>
-              <li>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-              </li>
-              <li>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-              </li>
-              <li>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-              </li>
-            </ul>
+
           </div>
           <button data-collapse-toggle="navbar-user" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
             <span className="sr-only">Open main menu</span>
