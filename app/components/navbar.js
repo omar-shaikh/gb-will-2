@@ -3,28 +3,54 @@ import Image from 'next/image';
 import Link from 'next/link';
 import GreenLogo from '../../assets/GreenLogo.png'; // Import your GreenLogo
 import PurpleLogo from '../../assets/PurpleLogo.png'; // Import your PurpleLogo
+import SmallGreenLogo from '../../assets/SmallGreenLogo.png'
+import SmallPurpleLogo from '../../assets/SmallPurpleLogo.png'
 
 const Navbar = () => {
   return (
     <div className="p-7">
       <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6"> 
-          <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <Image 
-              src={PurpleLogo} 
-              width={170}   
-              height={32}  
-              alt="Logo"
-              className="dark:hidden"  
-            />
-            <Image 
-              src={GreenLogo} 
-              width={170}   
-              height={32}  
-              alt="Logo"
-              className="hidden dark:block"  
-            />
-          </Link>
+<Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">  
+  {/* Large Purple Logo for light mode on large screens */}
+  <Image 
+    src={PurpleLogo} 
+    width={170}   
+    height={32}  
+    alt="Logo"
+    className="dark:hidden hidden sm:block"  
+  />
+  {/* Large Green Logo for dark mode on large screens only */}
+  <Image 
+    src={GreenLogo} 
+    width={170}   
+    height={32}  
+    alt="Logo"
+    className="hidden dark:sm:block sm:hidden"  
+  />
+  
+  {/* Small Purple Logo for light mode on small screens */}
+  <Image 
+    src={SmallPurpleLogo} 
+    width={40}   
+    height={40}  
+    alt="Logo"
+    className="dark:hidden block sm:hidden"  
+  />
+  {/* Small Green Logo for dark mode on small screens only */}
+  <Image 
+    src={SmallGreenLogo} 
+    width={40}   
+    height={40}  
+    alt="Logo"
+    className="hidden dark:block sm:dark:hidden sm:hidden"  
+  />
+</Link>
+
+
+
+
+
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center"> 
             <Link 
               href="login" 

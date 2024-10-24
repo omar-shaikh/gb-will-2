@@ -3,26 +3,47 @@ import Image from 'next/image';
 import GreenLogo from '../../assets/GreenLogo.png'; // Import your GreenLogo
 import PurpleLogo from '../../assets/PurpleLogo.png'; // Import your PurpleLogo
 import Link from 'next/link';
+import SmallGreenLogo from '../../assets/SmallGreenLogo.png'
+import SmallPurpleLogo from '../../assets/SmallPurpleLogo.png'
 const DashboardNav = () => {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-8">
-      <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Image 
-            src={PurpleLogo} 
-            width={170}   
-            height={32}  
-            alt="Logo"
-            className="dark:hidden"  
-          />
-          <Image 
-            src={GreenLogo} 
-            width={170}   
-            height={32}  
-            alt="Logo"
-            className="hidden dark:block"  
-          />
-        </Link>
+      <Link href="/dashboard" className="flex items-center space-x-3 rtl:space-x-reverse">  
+  {/* Large Purple Logo for light mode on large screens */}
+  <Image 
+    src={PurpleLogo} 
+    width={170}   
+    height={32}  
+    alt="Logo"
+    className="dark:hidden hidden sm:block"  
+  />
+  {/* Large Green Logo for dark mode on large screens only */}
+  <Image 
+    src={GreenLogo} 
+    width={170}   
+    height={32}  
+    alt="Logo"
+    className="hidden dark:sm:block sm:hidden"  
+  />
+  
+  {/* Small Purple Logo for light mode on small screens */}
+  <Image 
+    src={SmallPurpleLogo} 
+    width={40}   
+    height={40}  
+    alt="Logo"
+    className="dark:hidden block sm:hidden"  
+  />
+  {/* Small Green Logo for dark mode on small screens only */}
+  <Image 
+    src={SmallGreenLogo} 
+    width={40}   
+    height={40}  
+    alt="Logo"
+    className="hidden dark:block sm:dark:hidden sm:hidden"  
+  />
+      </Link>
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <span className="text-black dark:text-white mr-5">Omar Shaikh</span>
           <button type="button" className="flex text-sm bg-gray-150 dark:bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
