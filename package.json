@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "amazon-cognito-identity-js": "^6.3.12",
-    "aws-amplify": "^6.6.6",
+    "aws-amplify": "^6.6.7",
+    "aws-sdk": "^2.1691.0",
     "next": "^15.0.0",
     "react": "^18",
     "react-dom": "^18"

@@ -1,7 +1,7 @@
 import WelcomeMessage from "../components/WelcomeMessage";
 import Card from "../components/productCards"; // Import the Card component
 import ProductsSubtitle from "../components/productsSubtitle";
-
+import MathForm from "../components/MathForm";
 const Dashboard = () => {
   return (
     <div className="flex flex-col items-center min-h-screen p-6 mt-10">
@@ -10,9 +10,9 @@ const Dashboard = () => {
       {/* Flexbox container for cards with gap and controlled max width */}
       <div className="flex flex-wrap justify-between w-full gap-5 sm:max-w-[80%] lg:max-w-[67%] mt-6">
         <Card
-          title="Noteworthy technology acquisitions 2021"
+          title="Advanced High Tech Exponent Calculator"
           description="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-          link="#"
+          link="/dashboard/exponentCalc"
         />
         <Card
           title="Innovative Tech Trends"
