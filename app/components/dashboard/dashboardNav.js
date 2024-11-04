@@ -1,13 +1,13 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import GreenLogo from '../../assets/GreenLogo.png';
-import PurpleLogo from '../../assets/PurpleLogo.png';
+import GreenLogo from '../../../assets/GreenLogo.png';
+import PurpleLogo from '../../../assets/PurpleLogo.png';
 import Link from 'next/link';
-import SmallGreenLogo from '../../assets/SmallGreenLogo.png';
-import SmallPurpleLogo from '../../assets/SmallPurpleLogo.png';
+import SmallGreenLogo from '../../../assets/SmallGreenLogo.png';
+import SmallPurpleLogo from '../../../assets/SmallPurpleLogo.png';
 import { CognitoUser } from "amazon-cognito-identity-js";
-import UserPool from "../../UserPool"; // Ensure this points to your UserPool configuration
+import UserPool from '@/UserPool';
 
 const DashboardNav = () => {
     const [givenName, setGivenName] = useState("");

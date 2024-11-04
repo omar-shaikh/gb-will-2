@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import UserPool from '../../UserPool'; // Change import to default import
+import UserPool from "@/UserPool";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
-import GreenLogo from '../../assets/GreenLogo.png';
-import PurpleLogo from '../../assets/PurpleLogo.png';
+import GreenLogo from '../../../assets/GreenLogo.png';
+import PurpleLogo from '../../../assets/PurpleLogo.png';
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 

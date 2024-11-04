@@ -1,4 +1,4 @@
-import MathForm from "@/app/components/MathForm";
+import MathForm from "@/app/components/dashboard/forms/MathForm";
 const FillForm = () => {
   return (
     <div>

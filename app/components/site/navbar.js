@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import GreenLogo from '../../assets/GreenLogo.png'; // Import your GreenLogo
-import PurpleLogo from '../../assets/PurpleLogo.png'; // Import your PurpleLogo
-import SmallGreenLogo from '../../assets/SmallGreenLogo.png'
-import SmallPurpleLogo from '../../assets/SmallPurpleLogo.png'
+import GreenLogo from '../../../assets/GreenLogo.png'; // Import your GreenLogo
+import PurpleLogo from '../../../assets/PurpleLogo.png'; // Import your PurpleLogo
+import SmallGreenLogo from '../../../assets/SmallGreenLogo.png'
+import SmallPurpleLogo from '../../../assets/SmallPurpleLogo.png'
 
 const Navbar = () => {
   return (

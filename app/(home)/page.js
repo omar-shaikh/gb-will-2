@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Jumbotron from "../components/jumbotron";
-import CTA1 from "../components/CTA1";
+import Jumbotron from "../components/site/home/jumbotron";
+import CTA1 from "../components/site/home/CTA1";
 export default function Home() {
   return (
     <div>

@@ -2,7 +2,7 @@ import AWS from "aws-sdk";
 
 // Set up AWS configuration
 AWS.config.update({
-    region: "us-west-2", // Replace with your AWS region, e.g., 'us-west-2'
+    region: "us-west-1", // Replace with your AWS region, e.g., 'us-west-2'
 });
 
 // Create a DocumentClient for DynamoDB interactions
