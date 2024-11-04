@@ -35,7 +35,7 @@ const SignupForm = () => {
                 setError(err.message); // Update error state
             } else {
                 console.log("onSuccess: ", data);
-                router.push("/confirmAccount");
+                router.push("/confirm-account");
             }
         });
     };
@@ -138,7 +138,7 @@ const SignupForm = () => {
                                 </svg>
                                 Sign up with Google
                             </a>
-                            <button type="submit" className={`w-full inline-flex items-center justify-center py-2.5 px-5 mb-2 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 dark:bg-primary-500 dark:hover:bg-primary-600 dark:focus:ring-primary-800 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={loading}>
+                            <button type="submit" className={`w-full inline-flex items-center justify-center py-2.5 px-5 mb-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={loading}>
                                 {loading ? 'Creating Account...' : 'Create an account'}
                             </button>
                         </div>
