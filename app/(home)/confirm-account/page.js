@@ -1,7 +1,7 @@
 // pages/confirm-account.js
 "use client";
 import React from "react";
-import ConfirmAccountForm from '../../components/confirmAccountForm';
+import ConfirmAccountForm from "@/app/components/sigin-up/confirmAccountForm";
 
 const ConfirmAccount = () => {
     return (

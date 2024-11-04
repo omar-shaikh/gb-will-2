@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import UserPool from '../../UserPool';
-import GreenLogo from '../../assets/GreenLogo.png';
-import PurpleLogo from '../../assets/PurpleLogo.png';
+import UserPool from "@/UserPool";
+import GreenLogo from '../../../assets/GreenLogo.png'
+import PurpleLogo from '../../../assets/PurpleLogo.png';
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 

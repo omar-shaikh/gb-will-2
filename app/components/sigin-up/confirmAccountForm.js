@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from 'next/navigation'; // Import useRouter
-import UserPool from '../../UserPool'; // Change import to default import
+import UserPool from "@/UserPool";
 import { CognitoUser } from "amazon-cognito-identity-js"; // Import CognitoUser
-import GreenLogo from '../../assets/GreenLogo.png';
-import PurpleLogo from '../../assets/PurpleLogo.png'; // Import your PurpleLogo
+import GreenLogo from '../../../assets/GreenLogo.png';
+import PurpleLogo from '../../../assets/PurpleLogo.png'
 import Image from "next/image";
 
 const ConfirmAccountForm = () => {
