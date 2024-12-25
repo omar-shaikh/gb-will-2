@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@types/react": "18.3.11",
+    "@wixc3/react-board": "^4.5.3",
     "eslint": "^9.13.0",
     "eslint-config-next": "^15.0.0",
     "postcss": "^8",
