@@ -1,5 +1,5 @@
 import "../globals.css";
-import DashboardNav from "../components/dashboard/dashboardNav";
+import DashboardNav from "../components/dashboard-comp/dashboardNav";
 
 export const metadata = {
   title: "Dashboard",

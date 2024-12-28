@@ -1,6 +1,6 @@
 import React from "react";
-import WelcomeMessage from "../components/dashboard2/WelcomeMessage";
-import CardGrid from "../components/dashboard2/Cards";
+import WelcomeMessage from "../components/dashboard-comp/WelcomeMessage";
+import CardGrid from "../components/dashboard-comp/Cards";
 
 const Dashboard = () => {
   return (

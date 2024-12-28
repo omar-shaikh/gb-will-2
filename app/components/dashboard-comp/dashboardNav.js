@@ -47,19 +47,19 @@ const DashboardNav = () => {
 
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-8">
         <Link href="/dashboard" className="flex items-center space-x-3 rtl:space-x-reverse">  
           <Image 
             src={PurpleLogo} 
-            width={200}   
+            width={170}   
             height={32}  
             alt="Logo"
             className="dark:hidden hidden sm:block"  
           />
           <Image 
             src={GreenLogo} 
-            width={200}   
+            width={170}   
             height={32}  
             alt="Logo"
             className="hidden dark:sm:block sm:hidden"  
